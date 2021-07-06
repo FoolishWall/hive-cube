@@ -165,7 +165,7 @@ public class HadoopMetricsServiceImpl implements HadoopMetricsService {
 	public List<RegionServer> regionServers() {
 		BufferedReader bufReader = null;
 		InputStreamReader input = null;
-		List<RegionServer> list = new ArrayList<>();
+		List<RegionServer> list = new ArrayList<RegionServer>();
 		try {
 			URL url = new URL(HBase.HTTP + SystemConfig.getProperty("hive.cube.hbase.master") + HBase.HBASE_REGION_SERVER_JMX);
 			HttpURLConnection httpConn = (HttpURLConnection) url.openConnection();
@@ -221,7 +221,7 @@ public class HadoopMetricsServiceImpl implements HadoopMetricsService {
 		String web = SystemConfig.getProperty("hive.cube.hdfs.web");
 		BufferedReader bufReader = null;
 		InputStreamReader input = null;
-		List<HdfsDir> list = new ArrayList<>();
+		List<HdfsDir> list = new ArrayList<HdfsDir>();
 		try {
 			String visitAddr = web + String.format(HDFS.WEB_HDFS, path);
 			URL url = new URL(visitAddr);

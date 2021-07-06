@@ -1,0 +1,8 @@
+target/
+/.idea/
+hive-cube.iml
+hive-cube-api/hive-cube-api.iml
+hive-cube-common/hive-cube-common.iml
+hive-cube-core/hive-cube-core.iml
+hive-cube-plugins/hive-cube-plugins.iml
+hive-cube-web/hive-cube-web.iml

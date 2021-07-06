@@ -59,7 +59,6 @@ public class HBaseConnectionManager extends CacheLoader<HBaseConnectionKey, Conn
 		return conn != null && !conn.isAborted() && !conn.isClosed();
 	}
 
-	@Override
 	public void onRemoval(RemovalNotification<HBaseConnectionKey, Connection> notification) {
 		try {
 			Connection conn = notification.getValue();
@@ -97,7 +96,10 @@ public class HBaseConnectionManager extends CacheLoader<HBaseConnectionKey, Conn
 				}
 			}
 			return conn;
-		} catch (ExecutionException | UncheckedExecutionException e) {
+		} catch (ExecutionException e) {
+			LOG.error("Data read error:" + e.getMessage());
+			return null;
+		} catch (UncheckedExecutionException e){
 			LOG.error("Data read error:" + e.getMessage());
 			return null;
 		}

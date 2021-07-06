@@ -108,7 +108,7 @@ public class OdpsSqlParser {
 		if (columns.replaceAll(HConstants.SPACE, "").equals(HConstants.STAR)) {
 			return Arrays.asList(HConstants.STAR);
 		} else {
-			List<String> fields = new ArrayList<>();
+			List<String> fields = new ArrayList<String>();
 			for (String column : columns.split(HConstants.COMMA)) {
 				if (column.toLowerCase().contains(HConstants.AS)) {
 					fields.add(column.split(HConstants.AS)[1].replaceAll(HConstants.SPACE, "").replaceAll(HConstants.QUOTES, ""));

@@ -44,7 +44,7 @@ public class MySqlRecordReader {
 		JSONObject result = new JSONObject();
 		Connection connection = MySqlStoragePlugin.getInstance(odps.getJdbc(), odps.getUsername(), odps.getPassword());
 		ResultSet rs = null;
-		List<String> list = new ArrayList<>();
+		List<String> list = new ArrayList<String>();
 		try {
 			rs = connection.createStatement().executeQuery(odps.getSql());
 			ResultSetMetaData rsmd = rs.getMetaData();
@@ -73,7 +73,7 @@ public class MySqlRecordReader {
 		JSONObject datasets = new JSONObject();
 		Connection connection = MySqlStoragePlugin.getInstance(odps.getHost() + ":" + odps.getPort(), odps.getUsername(), odps.getPassword());
 		ResultSet rs = null;
-		List<String> list = new ArrayList<>();
+		List<String> list = new ArrayList<String>();
 		try {
 			rs = connection.createStatement().executeQuery(JConstants.SHOW_DATABASES);
 			ResultSetMetaData rsmd = rs.getMetaData();

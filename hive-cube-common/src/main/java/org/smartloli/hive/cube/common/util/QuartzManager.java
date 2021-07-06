@@ -78,7 +78,7 @@ public class QuartzManager {
 
 	/** Get all job names. */
 	public static List<String> getJobNames() {
-		List<String> jobNames = new ArrayList<>();
+		List<String> jobNames = new ArrayList<String>();
 		try {
 			Scheduler sched = schedulerFactory.getScheduler();
 			for (String name : sched.getJobNames(JOB_GROUP_NAME)) {
